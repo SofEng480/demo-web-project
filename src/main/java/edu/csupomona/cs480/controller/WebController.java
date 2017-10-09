@@ -47,7 +47,7 @@ public class WebController {
 	
 	//Byung Hun Lee simple String return method
 	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
-	String healthCheck2() {
+	String Test() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
 		// with the URL: http://localhost:8080/
