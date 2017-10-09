@@ -88,6 +88,14 @@ public class WebController {
 		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
 	}
 
+	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
+	String PrintHi() {
+		//run the application locally
+		// with the URL: http://localhost:8080/hi
+		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
+	}
+
+
 	/**
 	 * This is a simple example of how to use a data manager
 	 * to retrieve the data and return it as an HTTP response.
@@ -145,7 +153,9 @@ public class WebController {
 			@PathVariable("userId") String userId) {
 		userManager.deleteUser(userId);
 	}
-
+	/**
+	 * This is a test API command
+	 */
 	/**
 	 * This API lists all the users in the current database.
 	 *
