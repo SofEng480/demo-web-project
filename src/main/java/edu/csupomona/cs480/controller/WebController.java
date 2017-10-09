@@ -53,6 +53,18 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Testing";
 	}
+        
+        // Josh Montgomery Method
+        @RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
+	private String classDetails() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+                
+		return "CS 480, Fall 2017" +
+                        "\nT/Th 10:00am" +
+                        "\nCal Poly Pomona";
+	}
 	
 	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
