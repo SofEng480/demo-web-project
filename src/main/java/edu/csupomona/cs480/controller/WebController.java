@@ -44,6 +44,16 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
+	
+	//Byung Hun Lee simple String return method
+	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
+	String healthCheck2() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Testing";
+	}
+	
 	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
