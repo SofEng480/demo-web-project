@@ -51,6 +51,42 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK";
 	}
+	//Byung Hun Lee simple String return method
+	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
+	String Test() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Testing";
+	}
+
+	// Josh Montgomery Method
+	@RequestMapping(value = "/cs480/classinfo", method = RequestMethod.GET)
+	private String classDetails() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+
+		return "CS 480, Fall 2017" +
+				"\nT/Th 10:00am" +
+				"\nCal Poly Pomona";
+	}
+
+	//Ethan Smith Method
+	@RequestMapping(value = "/cs480/hello", method = RequestMethod.GET)
+	private String helloWorld() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Hello World!";
+	}
+	//Erick Lopez Method!
+	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
+	String PrintHi() {
+		//run the application locally
+		// with the URL: http://localhost:8080/hi
+		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
