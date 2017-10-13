@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.math3.linear.MatrixUtils;
+import org.apache.commons.math3.linear.RealMatrix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -97,13 +99,13 @@ public class WebController {
 				"\nCal Poly Pomona";
 	}
 
-        // Josh Montgomery Guava Method
-         private void guavaExample()
-        {
-            final Map<String, Map<String, Integer>> lookup = Maps.newHashMap();
-            // Guava can be used to rewrite final Map<String, Map<String, Integer>> lookup = new HashMap<>();
-            // as the above code. This makes for more verbose code
-        }
+	// Josh Montgomery Guava Method
+	 private void guavaExample()
+	{
+		final Map<String, Map<String, Integer>> lookup = Maps.newHashMap();
+		// Guava can be used to rewrite final Map<String, Map<String, Integer>> lookup = new HashMap<>();
+		// as the above code. This makes for more verbose code
+	}
 	//Ethan Smith Method
 	@RequestMapping(value = "/cs480/hello", method = RequestMethod.GET)
 	private String helloWorld() {
@@ -128,7 +130,17 @@ public class WebController {
 	String PrintHi() {
 		//run the application locally
 		// with the URL: http://localhost:8080/hi
-		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
+		double[][] matrixData1 =  {{1d,2d,3d}, {2d,5d,3d}};
+		double[][] matrixData2 =  { {1d,2d}, {2d,5d}, {1d, 7d}};
+
+		RealMatrix m = MatrixUtils.createRealMatrix(matrixData1);
+		RealMatrix n = MatrixUtils.createRealMatrix(matrixData2);
+
+		RealMatrix p = m.multiply(n);
+		String matrixP = p.toString();
+		return "<h1>Using Math Commons to multiply to Matrices</h1>" +
+				"<h2>Matrix A:</h2> <dv><p>|1 2 3|</br>|2 5 3|</p> </div><h2>Matrix B:</h2><div><p>|1 2|</br>|2 5|</p></div>" +
+				"<h4>Result of A x B:</h4><div><p>"+matrixP+"</p></div>" ;
 	}
 
 
