@@ -1,5 +1,6 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
@@ -82,6 +85,61 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK";
 	}
+	//Byung Hun Lee simple String return method
+	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
+	String Test() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Testing";
+	}
+	
+	//Byung Hun Lee jsoup method to get title of site (google in particular)
+	@RequestMapping(value = "/cs480/jsoup", method = RequestMethod.GET)
+	String Site(){
+		Document doc;
+		String title = null;
+        try {
+
+            // need http protocol
+            doc = Jsoup.connect("http://google.com").get();
+
+            // get page title
+            title = doc.title();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return title;
+	}
+
+	// Josh Montgomery Method
+	@RequestMapping(value = "/cs480/classinfo", method = RequestMethod.GET)
+	private String classDetails() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+
+		return "CS 480, Fall 2017" +
+				"\nT/Th 10:00am" +
+				"\nCal Poly Pomona";
+	}
+
+	//Ethan Smith Method
+	@RequestMapping(value = "/cs480/hello", method = RequestMethod.GET)
+	private String helloWorld() {
+		// You can replace this with other string,
+		// and run the application locally to check your changes
+		// with the URL: http://localhost:8080/
+		return "Hello World!";
+	}
+	//Erick Lopez Method!
+	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
+	String PrintHi() {
+		//run the application locally
+		// with the URL: http://localhost:8080/hi
+		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
+	}
+
 
 	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
 	String PrintHi() {
