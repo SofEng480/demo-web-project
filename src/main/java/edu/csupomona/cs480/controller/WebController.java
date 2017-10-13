@@ -112,6 +112,17 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "Hello World!";
 	}
+	
+	//Ethan Smith Commons IO Method
+	private void commonsIOExample() {
+		//reads bytes from a URL and prints them
+		InputStream in = new URL( "http://commons.apache.org" ).openStream();
+		try {
+		    System.out.println( IOUtils.toString( in ) );
+		} finally {
+			IOUtils.closeQuietly(in);
+		}
+	}
 	//Erick Lopez Method!
 	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
 	String PrintHi() {
