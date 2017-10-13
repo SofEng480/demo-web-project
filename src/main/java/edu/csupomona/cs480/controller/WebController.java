@@ -116,8 +116,10 @@ public class WebController {
 	}
 	
 	//Ethan Smith Commons IO Method
+	@RequestMapping(value = "/cs480/commonsIO", method = RequestMethod.GET)
 	private void commonsIOExample() {
 		//reads bytes from a URL and prints them
+		//run application locally with http://localhost:8080/commonsIO
 		InputStream in = new URL( "http://commons.apache.org" ).openStream();
 		try {
 		    System.out.println( IOUtils.toString( in ) );
