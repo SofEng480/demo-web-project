@@ -1,5 +1,9 @@
 package edu.csupomona.cs480.controller;
 
+<<<<<<< HEAD
+=======
+import com.google.common.collect.Maps;
+>>>>>>> b762429b0712a679f06eb8c81a36fc0a09943f39
 import java.io.IOException;
 import java.util.List;
 
@@ -16,6 +20,7 @@ import org.jsoup.nodes.Document;
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
+import java.util.Map;
 
 
 /**
@@ -48,6 +53,7 @@ public class WebController {
 	 * 	http://localhost:8080/cs480/ping
 	 */
 	
+
 	//Byung Hun Lee simple String return method
 	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
 	String Test() {
@@ -78,6 +84,7 @@ public class WebController {
     	return "Hello World!";
     }
     
+
 	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
@@ -106,7 +113,12 @@ public class WebController {
 
             // get page title
             title = doc.title();
+
         } catch (IOException e) {
+
+        } 
+        catch (IOException e) {
+
             e.printStackTrace();
         }
         return title;
@@ -123,6 +135,15 @@ public class WebController {
 				"\nT/Th 10:00am" +
 				"\nCal Poly Pomona";
 	}
+
+
+        // Josh Montgomery Guava Method
+         private void guavaExample()
+        {
+            final Map<String, Map<String, Integer>> lookup = Maps.newHashMap();
+            // Guava can be used to rewrite final Map<String, Map<String, Integer>> lookup = new HashMap<>();
+            // as the above code. This makes for more verbose code
+        }
 
 	//Ethan Smith Method
 	@RequestMapping(value = "/cs480/hello", method = RequestMethod.GET)
