@@ -1,9 +1,6 @@
 package edu.csupomona.cs480.controller;
 
-<<<<<<< HEAD
-=======
 import com.google.common.collect.Maps;
->>>>>>> b762429b0712a679f06eb8c81a36fc0a09943f39
 import java.io.IOException;
 import java.util.List;
 
@@ -53,38 +50,6 @@ public class WebController {
 	 * 	http://localhost:8080/cs480/ping
 	 */
 	
-
-	//Byung Hun Lee simple String return method
-	@RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
-	String Test() {
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/
-		return "Testing";
-	}
-        
-        // Josh Montgomery Method
-        @RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
-	private String classDetails() {
-		// You can replace this with other string,
-		// and run the application locally to check your changes
-		// with the URL: http://localhost:8080/
-                
-		return "CS 480, Fall 2017" +
-                        "\nT/Th 10:00am" +
-                        "\nCal Poly Pomona";
-	}
-        
-    //Ethan Smith Method
-    @RequestMapping(value = "/cs480/test", method = RequestMethod.GET)
-	private String helloWorld() {
-    	// You can replace this with other string,
-        // and run the application locally to check your changes
-    	// with the URL: http://localhost:8080/
-    	return "Hello World!";
-    }
-    
-
 	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
@@ -113,12 +78,8 @@ public class WebController {
 
             // get page title
             title = doc.title();
-
-        } catch (IOException e) {
-
         } 
         catch (IOException e) {
-
             e.printStackTrace();
         }
         return title;
@@ -136,7 +97,6 @@ public class WebController {
 				"\nCal Poly Pomona";
 	}
 
-
         // Josh Montgomery Guava Method
          private void guavaExample()
         {
@@ -144,7 +104,6 @@ public class WebController {
             // Guava can be used to rewrite final Map<String, Map<String, Integer>> lookup = new HashMap<>();
             // as the above code. This makes for more verbose code
         }
-
 	//Ethan Smith Method
 	@RequestMapping(value = "/cs480/hello", method = RequestMethod.GET)
 	private String helloWorld() {
@@ -154,14 +113,6 @@ public class WebController {
 		return "Hello World!";
 	}
 	//Erick Lopez Method!
-	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
-	String PrintHi() {
-		//run the application locally
-		// with the URL: http://localhost:8080/hi
-		return "<h1>Hi</h1> \n<h1>Are you lost?</h1>" ;
-	}
-
-
 	@RequestMapping(value = "/cs480/hi", method = RequestMethod.GET)
 	String PrintHi() {
 		//run the application locally
