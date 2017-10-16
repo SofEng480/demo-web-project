@@ -2,10 +2,13 @@ package edu.csupomona.cs480.controller;
 
 import com.google.common.collect.Maps;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.io.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +22,8 @@ import org.jsoup.nodes.Document;
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
+
+
 import java.util.Map;
 
 
@@ -120,9 +125,12 @@ public class WebController {
 	private void commonsIOExample() {
 		//reads bytes from a URL and prints them
 		//run application locally with http://localhost:8080/commonsIO
-		InputStream in = new URL( "http://commons.apache.org" ).openStream();
+		InputStream in = null;
 		try {
-		    System.out.println( IOUtils.toString( in ) );
+			in = new URL( "http://commons.apache.org" ).openStream();
+			System.out.println(IOUtils.toString(in));
+		}catch(IOException ex){
+			ex.printStackTrace();
 		} finally {
 			IOUtils.closeQuietly(in);
 		}
